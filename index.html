@@ -121,7 +121,7 @@
       <button data-nav="services" onclick="navigate('services')" class="nav-link pb-1 transition-colors duration-300">Services</button>
       <button data-nav="clients"  onclick="navigate('clients')"  class="nav-link pb-1 transition-colors duration-300">Clients</button>
     </nav>
-    <button onclick="navigate('services')" class="bg-[#0A192F] text-white px-6 py-2 uppercase font-label-sm tracking-widest text-label-sm hover:bg-opacity-90 transition-opacity hidden md:block">
+    <button onclick="navigate('services'); setTimeout(()=>document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}),50)" class="bg-[#0A192F] text-white px-6 py-2 uppercase font-label-sm tracking-widest text-label-sm hover:bg-opacity-90 transition-opacity hidden md:block">
       Contact
     </button>
     <button class="md:hidden text-on-surface">
@@ -306,7 +306,7 @@
       </div>
     </section>
 
-    <section class="bg-primary-container text-on-primary-container p-12 md:p-24 flex flex-col items-center text-center">
+    <section id="contact-form" class="bg-primary-container text-on-primary-container p-12 md:p-24 flex flex-col items-center text-center">
       <div class="max-w-3xl w-full mx-auto">
         <h2 class="font-headline-xl text-headline-xl text-white mb-6">Open for Consults.</h2>
         <p class="font-body-lg text-body-lg text-inverse-primary mb-12">Ready to architect a narrative that commands authority and drives outcomes? Submit an intake form to begin the conversation.</p>
