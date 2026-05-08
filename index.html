@@ -199,17 +199,28 @@
       section#services {
         padding-left: 20px;
         padding-right: 20px;
-        padding-top: 48px;
-        padding-bottom: 48px;
+        padding-top: 32px;
+        padding-bottom: 32px;
       }
 
       .py-section-gap {
-        padding-top: 48px;
-        padding-bottom: 48px;
+        padding-top: 32px !important;
+        padding-bottom: 32px !important;
       }
 
       .mb-section-gap {
-        margin-bottom: 48px;
+        margin-bottom: 32px !important;
+      }
+
+      /* kill the enforced min-height on About hero — causes huge blank space on mobile */
+      .min-h-\[500px\] {
+        min-height: 0 !important;
+      }
+
+      /* tighten the clients hero too */
+      .py-16 {
+        padding-top: 24px !important;
+        padding-bottom: 24px !important;
       }
 
       h1.font-headline-xl {
