@@ -1,0 +1,343 @@
+<!-- Services | Lanecraft Lab -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lanecraft Lab - Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Newsreader:wght@500;600&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "outline": "#75777e",
+          "on-surface": "#191c1d",
+          "inverse-primary": "#b9c7e4",
+          "surface-bright": "#f8f9fa",
+          "tertiary-fixed-dim": "#b2cbcd",
+          "on-tertiary": "#ffffff",
+          "inverse-surface": "#2e3132",
+          "surface-container-high": "#e7e8e9",
+          "surface-container": "#edeeef",
+          "on-primary-fixed-variant": "#39475f",
+          "on-primary": "#ffffff",
+          "primary-fixed-dim": "#b9c7e4",
+          "on-error-container": "#93000a",
+          "surface-tint": "#515f78",
+          "surface-dim": "#d9dadb",
+          "on-tertiary-fixed": "#071f21",
+          "on-background": "#191c1d",
+          "on-error": "#ffffff",
+          "on-surface-variant": "#44474d",
+          "surface-container-highest": "#e1e3e4",
+          "on-tertiary-fixed-variant": "#344b4d",
+          "tertiary-container": "#071f21",
+          "on-tertiary-container": "#70888a",
+          "tertiary": "#000000",
+          "primary-container": "#0d1c32",
+          "secondary-fixed": "#ffdf9e",
+          "on-secondary-container": "#775f28",
+          "error": "#ba1a1a",
+          "surface-container-lowest": "#ffffff",
+          "tertiary-fixed": "#cee7e9",
+          "on-primary-container": "#76849f",
+          "surface-variant": "#e1e3e4",
+          "primary": "#000000",
+          "background": "#f8f9fa",
+          "error-container": "#ffdad6",
+          "secondary": "#735b25",
+          "surface": "#f8f9fa",
+          "on-secondary-fixed-variant": "#59440f",
+          "secondary-container": "#fddc99",
+          "on-secondary": "#ffffff",
+          "inverse-on-surface": "#f0f1f2",
+          "surface-container-low": "#f3f4f5",
+          "secondary-fixed-dim": "#e2c382",
+          "primary-fixed": "#d6e3ff",
+          "on-primary-fixed": "#0d1c32",
+          "on-secondary-fixed": "#261a00",
+          "outline-variant": "#c5c6cd"
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        spacing: {
+          "unit": "4px",
+          "margin-page": "64px",
+          "section-gap": "128px",
+          "gutter": "24px"
+        },
+        fontFamily: {
+          "body-lg": ["Inter"],
+          "label-sm": ["Inter"],
+          "headline-xl": ["Newsreader"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Newsreader"]
+        },
+        fontSize: {
+          "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+          "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+          "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+          "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+
+<!-- Header -->
+<header class="bg-white dark:bg-[#0A192F] top-0 border-b border-slate-200 dark:border-slate-800 sticky z-50">
+  <div class="flex justify-between items-center h-20 px-8 md:px-12 w-full max-w-screen-2xl mx-auto">
+    <a href="/" class="text-2xl font-bold tracking-tighter text-[#0A192F] dark:text-white uppercase">Lanecraft Lab</a>
+    <nav class="hidden md:flex gap-8 items-center font-serif text-lg tracking-tight">
+      <a href="/about"   class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#0A192F] dark:hover:text-white transition-colors duration-300">About</a>
+      <a href="/"   class="text-[#0A192F] dark:text-white border-b-2 border-[#0A192F] dark:border-white pb-1 font-semibold">Services</a>
+      <a href="/clients" class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#0A192F] dark:hover:text-white transition-colors duration-300">Clients</a>
+    </nav>
+    <button class="bg-[#0A192F] text-white px-6 py-2 uppercase font-label-sm tracking-widest text-label-sm hover:bg-opacity-90 transition-opacity">Contact</button>
+  </div>
+</header>
+
+<main class="max-w-screen-2xl mx-auto px-margin-page py-section-gap">
+
+  <!-- Hero -->
+  <section class="mb-section-gap grid grid-cols-12 gap-gutter items-center">
+    <div class="col-span-12 md:col-span-8 lg:col-span-7">
+      <h1 class="font-headline-xl text-headline-xl text-primary mb-8">Shaping stories that influence decisions.</h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">Strategic advisory and narrative architecture designed for global leaders, ensuring every communication drives clear, measurable outcomes in high-stakes environments.</p>
+      <button class="border border-outline text-primary px-8 py-4 uppercase font-label-sm text-label-sm hover:bg-surface-container transition-colors">Explore Offerings</button>
+    </div>
+  </section>
+
+  <!-- Core Offerings -->
+  <section class="mb-section-gap">
+    <div class="flex items-center gap-4 mb-12">
+      <div class="h-[1px] bg-outline flex-grow opacity-30"></div>
+      <h2 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">Core Offerings</h2>
+      <div class="h-[1px] bg-outline flex-grow opacity-30"></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-unit auto-rows-[300px]">
+      <div class="md:col-span-8 bg-surface-container-low border border-outline border-opacity-20 p-8 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-500">
+        <div class="flex justify-between items-start">
+          <span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings:'FILL' 0;">account_balance</span>
+          <span class="font-label-sm text-label-sm text-outline uppercase">01</span>
+        </div>
+        <div>
+          <h3 class="font-headline-lg text-headline-lg text-primary mb-4">Corporate Governance</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Aligning board-level narratives with regulatory requirements and stakeholder expectations, building frameworks for transparent and authoritative leadership communication.</p>
+        </div>
+      </div>
+      <div class="md:col-span-4 bg-surface-container-low border border-outline border-opacity-20 p-8 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-500">
+        <div class="flex justify-between items-start">
+          <span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings:'FILL' 0;">groups</span>
+          <span class="font-label-sm text-label-sm text-outline uppercase">02</span>
+        </div>
+        <div class="mt-auto">
+          <h3 class="font-headline-lg text-headline-lg text-primary mb-4 text-2xl">Stakeholder Engagement</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm">Mapping complex stakeholder ecosystems to deliver targeted messaging that secures buy-in and mitigates risk.</p>
+        </div>
+      </div>
+      <div class="md:col-span-4 bg-surface-container-low border border-outline border-opacity-20 p-8 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-500">
+        <div class="flex justify-between items-start">
+          <span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings:'FILL' 0;">campaign</span>
+          <span class="font-label-sm text-label-sm text-outline uppercase">03</span>
+        </div>
+        <div class="mt-auto">
+          <h3 class="font-headline-lg text-headline-lg text-primary mb-4 text-2xl">Media &amp; Public Voice</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant text-sm">Architecting proactive media strategies to position executives as thought leaders and manage critical public narratives.</p>
+        </div>
+      </div>
+      <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-unit">
+        <div class="bg-surface-container-low border border-outline border-opacity-20 p-8 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-500">
+          <div class="flex justify-between items-start">
+            <span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings:'FILL' 0;">account_tree</span>
+            <span class="font-label-sm text-label-sm text-outline uppercase">04</span>
+          </div>
+          <div class="mt-auto">
+            <h3 class="font-headline-lg text-headline-lg text-primary mb-4 text-2xl">Processes Optimization</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Streamlining internal communication architectures to eliminate friction and ensure narrative consistency across global teams.</p>
+          </div>
+        </div>
+        <div class="bg-surface-container-low border border-outline border-opacity-20 p-8 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-500">
+          <div class="flex justify-between items-start">
+            <span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings:'FILL' 0;">eco</span>
+            <span class="font-label-sm text-label-sm text-outline uppercase">05</span>
+          </div>
+          <div class="mt-auto">
+            <h3 class="font-headline-lg text-headline-lg text-primary mb-4 text-2xl">Sustainability</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant text-sm">Translating complex ESG initiatives into compelling, credible narratives that resonate with investors and the public.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1:1 Strategy Consults -->
+  <section class="mb-section-gap">
+    <div class="flex items-center gap-4 mb-16">
+      <div class="h-[1px] bg-outline flex-grow opacity-30"></div>
+      <h2 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">1:1 Strategy Consults</h2>
+      <div class="h-[1px] bg-outline flex-grow opacity-30"></div>
+    </div>
+    <div class="grid grid-cols-12 gap-gutter">
+      <div class="col-span-12 lg:col-span-4 flex flex-col gap-8">
+        <h3 class="font-headline-xl text-headline-xl text-primary">Focused Executive Sessions.</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant">Direct, intensive advisory sessions designed to untangle complex personal or organizational narratives and chart a precise path forward.</p>
+      </div>
+      <div class="col-span-12 lg:col-span-7 lg:col-start-6 flex flex-col gap-unit">
+        <div class="border-b border-outline border-opacity-20 py-8 flex flex-col md:flex-row gap-8 items-start hover:bg-surface-container-low transition-colors px-4 -mx-4 group">
+          <div class="w-12 h-12 flex-shrink-0 border border-outline border-opacity-30 flex items-center justify-center bg-white group-hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">trending_up</span>
+          </div>
+          <div>
+            <h4 class="font-headline-lg text-headline-lg text-primary mb-2 text-2xl">Career Development</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4">Strategic positioning for executives navigating transitions, seeking board seats, or looking to elevate their industry profile through deliberate narrative construction.</p>
+            <span class="font-label-sm text-label-sm uppercase text-secondary">60 Min Session</span>
+          </div>
+        </div>
+        <div class="border-b border-outline border-opacity-20 py-8 flex flex-col md:flex-row gap-8 items-start hover:bg-surface-container-low transition-colors px-4 -mx-4 group">
+          <div class="w-12 h-12 flex-shrink-0 border border-outline border-opacity-30 flex items-center justify-center bg-white group-hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">architecture</span>
+          </div>
+          <div>
+            <h4 class="font-headline-lg text-headline-lg text-primary mb-2 text-2xl">Narrative Strategy</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4">A deep dive into parsing and restructuring a specific, high-stakes organizational story to ensure clarity, impact, and alignment with overarching business objectives.</p>
+            <span class="font-label-sm text-label-sm uppercase text-secondary">90 Min Session</span>
+          </div>
+        </div>
+        <div class="py-8 flex flex-col md:flex-row gap-8 items-start hover:bg-surface-container-low transition-colors px-4 -mx-4 group">
+          <div class="w-12 h-12 flex-shrink-0 border border-outline border-opacity-30 flex items-center justify-center bg-white group-hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined text-on-surface-variant">menu_book</span>
+          </div>
+          <div>
+            <h4 class="font-headline-lg text-headline-lg text-primary mb-2 text-2xl">Book Pathway</h4>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4">Architecting the foundational thesis and strategic rollout plan for executive authorship, transforming complex ideas into compelling long-form narratives.</p>
+            <span class="font-label-sm text-label-sm uppercase text-secondary">Multi-Session Arc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="mb-section-gap bg-surface-container-lowest border border-outline border-opacity-20 p-8 md:p-16">
+    <div class="mb-12">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-4">What Clients Are Saying</h2>
+      <div class="h-[1px] w-24 bg-outline opacity-50"></div>
+    </div>
+    <div class="flex flex-col border-t border-outline border-opacity-20">
+      <div class="py-8 border-b border-outline border-opacity-20 grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <div class="md:col-span-1">
+          <p class="font-headline-lg text-headline-lg text-primary">Quratulain Tejani</p>
+          <p class="font-label-sm text-label-sm uppercase text-on-surface-variant mt-2">Executive Director</p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="font-body-lg text-body-lg text-on-surface-variant italic">"The clarity brought to our governance narrative was transformative. It wasn't just about sounding better; it was about restructuring how we articulate value to the board."</p>
+        </div>
+      </div>
+      <div class="py-8 border-b border-outline border-opacity-20 grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <div class="md:col-span-1">
+          <p class="font-headline-lg text-headline-lg text-primary">Kevin J. Burke</p>
+          <p class="font-label-sm text-label-sm uppercase text-on-surface-variant mt-2">Managing Partner</p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="font-body-lg text-body-lg text-on-surface-variant italic">"A brilliant analytical approach to stakeholder engagement. The strategy provided a clear architecture for navigating complex multi-party negotiations."</p>
+        </div>
+      </div>
+      <div class="py-8 border-b border-outline border-opacity-20 grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <div class="md:col-span-1">
+          <p class="font-headline-lg text-headline-lg text-primary">Anushka Kar</p>
+          <p class="font-label-sm text-label-sm uppercase text-on-surface-variant mt-2">VP of Communications</p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="font-body-lg text-body-lg text-on-surface-variant italic">"The process optimization frameworks immediately reduced friction within our global teams, aligning our messaging across three continents flawlessly."</p>
+        </div>
+      </div>
+      <div class="py-8 border-b border-outline border-opacity-20 grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <div class="md:col-span-1">
+          <p class="font-headline-lg text-headline-lg text-primary">Rachel Curtis</p>
+          <p class="font-label-sm text-label-sm uppercase text-on-surface-variant mt-2">Founder &amp; CEO</p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="font-body-lg text-body-lg text-on-surface-variant italic">"The 1:1 narrative strategy session was intense and highly effective. We dismantled a confusing brand story and rebuilt it into a precise, commanding thesis."</p>
+        </div>
+      </div>
+      <div class="py-8 grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+        <div class="md:col-span-1">
+          <p class="font-headline-lg text-headline-lg text-primary">Vasant Laplam</p>
+          <p class="font-label-sm text-label-sm uppercase text-on-surface-variant mt-2">Chief Sustainability Officer</p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="font-body-lg text-body-lg text-on-surface-variant italic">"Translating ESG metrics into a compelling narrative is difficult. This advisory work provided the exact architectural blueprint we needed to communicate impact authoritatively."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Intake -->
+  <section class="bg-primary-container text-on-primary-container p-12 md:p-24 flex flex-col items-center text-center">
+    <div class="max-w-3xl w-full mx-auto">
+      <h2 class="font-headline-xl text-headline-xl text-white mb-6">Open for Consults.</h2>
+      <p class="font-body-lg text-body-lg text-inverse-primary mb-12">Ready to architect a narrative that commands authority and drives outcomes? Submit an intake form to begin the conversation.</p>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+        <div class="flex flex-col gap-2">
+          <label class="font-label-sm text-label-sm uppercase text-inverse-primary opacity-80" for="name">Name</label>
+          <input class="bg-transparent border-b border-outline-variant text-white py-3 focus:outline-none focus:border-white transition-colors placeholder:text-on-primary-container/50" id="name" name="name" placeholder="Enter your name" required type="text"/>
+        </div>
+        <div class="flex flex-col gap-2">
+          <label class="font-label-sm text-label-sm uppercase text-inverse-primary opacity-80" for="email">Email</label>
+          <input class="bg-transparent border-b border-outline-variant text-white py-3 focus:outline-none focus:border-white transition-colors placeholder:text-on-primary-container/50" id="email" name="email" placeholder="Enter your email" required type="email"/>
+        </div>
+        <div class="flex flex-col gap-2 md:col-span-2">
+          <label class="font-label-sm text-label-sm uppercase text-inverse-primary opacity-80" for="service">Service Interest</label>
+          <select class="bg-transparent border-b border-outline-variant text-white py-3 focus:outline-none focus:border-white transition-colors appearance-none cursor-pointer" id="service" name="service">
+            <option class="bg-primary-container" disabled selected value="">Select a service</option>
+            <option class="bg-primary-container text-white" value="corporate-governance">Corporate Governance</option>
+            <option class="bg-primary-container text-white" value="stakeholder-engagement">Stakeholder Engagement</option>
+            <option class="bg-primary-container text-white" value="media-strategy">Media Strategy</option>
+            <option class="bg-primary-container text-white" value="systems-optimization">Systems Optimization</option>
+            <option class="bg-primary-container text-white" value="sustainability">Sustainability</option>
+            <option class="bg-primary-container text-white" value="1-1-strategy">1:1 Strategy Consult</option>
+            <option class="bg-primary-container text-white" value="other">Other</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-2 md:col-span-2">
+          <label class="font-label-sm text-label-sm uppercase text-inverse-primary opacity-80" for="message">Brief Message</label>
+          <textarea class="bg-transparent border-b border-outline-variant text-white py-3 focus:outline-none focus:border-white transition-colors resize-none placeholder:text-on-primary-container/50" id="message" name="message" placeholder="How can we help?" required rows="4"></textarea>
+        </div>
+        <div class="md:col-span-2 flex justify-center mt-8">
+          <button class="bg-white text-primary-container px-12 py-4 uppercase font-label-sm text-label-sm tracking-widest hover:bg-surface-container-high transition-colors" type="submit">Submit Inquiry</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-[#050C16] text-[#0A192F] dark:text-slate-300 font-sans text-sm tracking-wide uppercase border-t border-slate-200 dark:border-slate-800">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 py-16 px-8 md:px-24 w-full max-w-screen-2xl mx-auto">
+    <div class="flex flex-col gap-4">
+      <div class="text-lg font-black text-[#0A192F] dark:text-white">Lanecraft Lab</div>
+      <p class="normal-case text-slate-500 dark:text-slate-400">© 2024 Lanecraft Lab. Strategic advisory meets story architecture.</p>
+    </div>
+    <div class="flex flex-col md:items-end gap-4">
+      <a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-slate-100 transition-colors" href="mailto:comms@lanecraftlab.com">comms@lanecraftlab.com</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-slate-100 transition-colors" href="#">Privacy Policy</a>
+      <a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-slate-100 transition-colors" href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
