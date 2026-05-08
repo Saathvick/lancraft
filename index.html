@@ -254,8 +254,9 @@
         auto-rows: auto;
       }
 
-      .md\:col-span-8,
-      .md\:col-span-4 {
+      /* min-height only for bento grid cards, not section heading columns */
+      .gap-unit > .md\:col-span-8,
+      .gap-unit > .md\:col-span-4 {
         height: auto;
         min-height: 220px;
       }
@@ -399,7 +400,7 @@
 
     <!-- About Us text -->
     <div
-      class="py-section-gap px-gutter md:px-margin-page grid grid-cols-1 md:grid-cols-12 gap-gutter items-center min-h-[500px] max-w-screen-2xl mx-auto">
+      class="py-section-gap px-gutter md:px-margin-page md:grid md:grid-cols-12 md:gap-gutter md:items-center max-w-screen-2xl mx-auto">
       <div class="md:col-span-8 col-start-1">
         <span class="font-label-sm text-label-sm uppercase text-outline tracking-widest mb-4 block">About Us</span>
         <p class="text-on-surface max-w-2xl text-pretty leading-relaxed" style="font-size:20px; line-height:1.7;">Lanecraft Lab
@@ -414,7 +415,7 @@
 
     <!-- The Mission -->
     <div
-      class="py-section-gap px-gutter md:px-margin-page grid grid-cols-1 md:grid-cols-12 gap-gutter border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
+      class="py-section-gap px-gutter md:px-margin-page md:grid md:grid-cols-12 md:gap-gutter border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
       <div class="md:col-span-4 col-start-1 mb-8 md:mb-0">
         <h2 class="font-headline-lg text-headline-lg text-primary sticky top-32">The Mission</h2>
       </div>
@@ -448,7 +449,7 @@
 
     <!-- Featured Press -->
     <div
-      class="py-section-gap px-gutter md:px-margin-page grid grid-cols-1 md:grid-cols-12 gap-gutter border-t border-outline-variant/30 bg-surface-container-low">
+      class="py-section-gap px-gutter md:px-margin-page md:grid md:grid-cols-12 md:gap-gutter border-t border-outline-variant/30 bg-surface-container-low">
       <div class="md:col-span-4 col-start-1 mb-8 md:mb-0 max-w-screen-2xl mx-auto">
         <h2 class="font-headline-lg text-headline-lg text-primary">Featured Press</h2>
       </div>
