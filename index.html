@@ -223,6 +223,17 @@
         padding-bottom: 24px !important;
       }
 
+      /* collapse gap between stacked grid rows (Mission, Featured Press, Leadership etc) */
+      .gap-gutter {
+        gap: 8px !important;
+      }
+
+      /* heading columns (The Mission, Featured Press, Leadership) — remove bottom margin when stacked */
+      .md\:col-span-4.mb-8,
+      .md\:col-span-4.mb-8.md\:mb-0 {
+        margin-bottom: 4px !important;
+      }
+
       h1.font-headline-xl {
         font-size: 32px;
         line-height: 1.15;
