@@ -104,8 +104,9 @@
   details > summary::-webkit-details-marker { display: none; }
   details summary { list-style: none; }
   details[open] summary .expand-icon { transform: rotate(180deg); }
-  [data-page] { display: none; }
-  [data-page].active { display: block; }
+  [data-page] { display: none !important; }
+  [data-page].active { display: block !important; }
+  [data-page="about"].active { display: flex !important; }
 </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container min-h-screen flex flex-col">
