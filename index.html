@@ -85,10 +85,10 @@
             "headline-lg": ["Newsreader"]
           },
           fontSize: {
-            "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+            "body-lg": ["20px", { "lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400" }],
             "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
             "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-            "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+            "body-md": ["17px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
             "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }]
           }
         }
@@ -334,6 +334,11 @@
         max-width: 120px;
       }
 
+      /* Ken Burns hero: cap height on mobile */
+      .hero-kenburns {
+        max-height: 280px;
+      }
+
       /* Featured Engagements: stack logos on mobile */
       .grid.grid-cols-3 {
         grid-template-columns: 1fr;
@@ -343,6 +348,47 @@
       .flex.flex-col.md\\:flex-row.gap-10 {
         flex-direction: column;
       }
+    }
+
+    /* ── Ken Burns hero animation ── */
+    @keyframes kenburns-slow {
+      0%   { transform: scale(1.0) translate(0, 0); }
+      50%  { transform: scale(1.08) translate(-1.5%, 0.8%); }
+      100% { transform: scale(1.0) translate(0, 0); }
+    }
+    .hero-kenburns-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    .hero-kenburns {
+      animation: kenburns-slow 28s ease-in-out infinite;
+      will-change: transform;
+      display: block;
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ── Press / media logo hover ── */
+    .press-logo {
+      opacity: 0.82;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      display: inline-block;
+    }
+    .press-logo:hover {
+      transform: scale(1.18);
+      opacity: 1;
+    }
+
+    /* ── Client engagement card hover ── */
+    .client-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .client-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
   </style>
 </head>
@@ -415,6 +461,20 @@
       </div>
     </div>
 
+    <!-- ── Koi Hero ── -->
+    <div class="hero-kenburns-wrapper border-t border-outline-variant/20">
+      <img
+        src="koi-hero.jpg"
+        alt="Two koi fish swimming forward in a tranquil pond"
+        class="hero-kenburns"
+      />
+      <div class="absolute inset-0 flex items-end pb-8 px-8 md:px-margin-page"
+        style="background: linear-gradient(to top, rgba(10,25,47,0.55) 0%, transparent 60%);">
+        <p class="text-white/75 font-label-sm text-label-sm uppercase tracking-widest"
+          style="font-size:11px; letter-spacing:0.18em;">Client-driven &middot; Purpose-led &middot; Outcome-focused</p>
+      </div>
+    </div>
+
     <!-- The Mission -->
     <div
       class="py-section-gap px-gutter md:px-margin-page md:grid md:grid-cols-12 md:gap-gutter border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
@@ -426,23 +486,22 @@
           scale by placing their ideas, expertise, and innovations in front of target stakeholder groups that can drive
           top-lines and generate repeat business for our clients. We specialize in earned media visibility across
           Tier-1, trade, and specialist outlets. Media outlets where our clients have been featured include:</p>
-        <!-- Media outlet logos — sized to match reference site -->
+        <!-- Media outlet logos -->
         <div class="flex flex-wrap items-center gap-8 md:gap-12 mt-2">
-          <img src="WSJ+logo.webp" alt="The Wall Street Journal"
-            style="height:36px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;"
-            onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85" />
-          <img src="TheStreet+logo.webp" alt="The Street"
-            style="height:36px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;"
-            onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85" />
-          <img src="CNBC+logo.webp" alt="CNBC"
-            style="height:36px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;"
-            onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85" />
-          <img src="Golf+Digest.webp" alt="Golf Digest"
-            style="height:36px; object-fit:contain; opacity:0.85; transition:opacity 0.2s;"
-            onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85" />
-          <span
-            style="font-weight:700; font-size:14px; letter-spacing:0.08em; color:#44474d; opacity:0.75; text-transform:uppercase;">BW
-            BusinessWorld</span>
+          <img src="WSJ+logo.webp" alt="The Wall Street Journal" class="press-logo"
+            style="height:36px; object-fit:contain;" />
+          <img src="TheStreet+logo.webp" alt="The Street" class="press-logo"
+            style="height:36px; object-fit:contain;" />
+          <img src="CNBC+logo.webp" alt="CNBC" class="press-logo"
+            style="height:36px; object-fit:contain;" />
+          <img src="Golf+Digest.webp" alt="Golf Digest" class="press-logo"
+            style="height:36px; object-fit:contain;" />
+          <img src="Forbes_logo.svg" alt="Forbes" class="press-logo"
+            style="height:34px; object-fit:contain;" />
+          <span class="press-logo"
+            style="font-weight:800; font-size:13px; letter-spacing:0.06em; color:#3b3b3b; text-transform:none; font-family:Georgia,serif;">Morning Brew</span>
+          <span class="press-logo"
+            style="font-weight:700; font-size:13px; letter-spacing:0.08em; color:#44474d; text-transform:uppercase;">BW BusinessWorld</span>
         </div>
       </div>
     </div>
@@ -467,7 +526,40 @@
       </div>
     </div>
 
-    <!-- Advisory Committee — comes BEFORE Our Leadership -->
+    <!-- Our Leadership -->
+    <div class="py-section-gap px-gutter md:px-margin-page border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-10">Our Leadership</h2>
+      <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
+        <!-- Text block (left on desktop) -->
+        <div class="w-full md:w-3/5 space-y-4 font-body-md text-body-md text-on-surface-variant">
+          <p>Nish Amarnath is the founder of Lanecraft Lab, a strategic advisory and communications firm helping
+            organizations and senior professionals clarify their narratives, strengthen stakeholder relationships, and
+            drive visibility across media, capital markets, and institutional channels. She brings to this work over a
+            decade of experience in capital-intensive, high-stakes sectors — leading editorial teams at Institutional
+            Investor and Industry Dive, advising on communications strategy for global organizations, and steering a
+            public diplomacy initiative for the UK Government. Her writing has appeared in Tier-1 and trade media
+            outlets including <em>The Wall Street Journal</em>, Reuters, TheStreet.com, and <em>S&amp;P Global</em>.
+            Nish majored in Economics with Distinction, and holds postgraduate degrees from the London School of
+            Economics and Columbia University, where she was a James W. Robins Reporting Fellow.</p>
+          <p class="pt-4 font-body-md text-body-md text-on-surface">If you'd like to work with us, contact us at <a
+              href="mailto:comms@lanecraftlab.com"
+              class="text-secondary underline hover:text-primary transition-colors">comms@lanecraftlab.com</a></p>
+        </div>
+        <!-- Portrait (right on desktop) -->
+        <div class="w-full md:w-2/5 flex-shrink-0">
+          <img alt="Portrait of Nish Amarnath" src="nishamarnath.png"
+            class="w-full max-w-sm md:max-w-full object-cover object-top rounded-sm shadow-md"
+            style="max-height:480px;" />
+          <div class="mt-4">
+            <p class="font-headline-lg text-headline-lg text-primary">Nish Amarnath</p>
+            <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mt-1">Founder &amp; Managing
+              Partner</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advisory Committee -->
     <div class="py-section-gap px-gutter md:px-margin-page border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
       <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Advisory Committee</h2>
       <p class="font-body-md text-body-md text-on-surface-variant mb-2 max-w-3xl">Lanecraft Lab is building a circle of
@@ -513,40 +605,6 @@
         <div class="border-t border-outline-variant/50 pt-6">
           <p class="font-body-md text-body-md text-on-surface-variant italic">Additional members will be listed here as
             the committee expands.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Our Leadership — comes AFTER Advisory Committee -->
-    <div class="py-section-gap px-gutter md:px-margin-page border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
-      <h2 class="font-headline-lg text-headline-lg text-primary mb-10">Our Leadership</h2>
-      <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
-        <!-- Text block (left on desktop) -->
-        <div class="w-full md:w-3/5 space-y-4 font-body-md text-body-md text-on-surface-variant">
-          <p>With early roots in management consulting, Nish Amarnath has long been drawn to the intersection of
-            strategy and systems. For over a decade, she specialized in capital-intensive, high-stakes sectors through
-            editorial leadership, analysis of deal structures, CDS price trends, ETF sector flows, and strategic
-            collaborations with industry players, as well as federal, state and regulatory agencies. Nish has led
-            editorial teams at Institutional Investor and Industry Dive, guided communications strategy for global
-            organizations, steered a public diplomacy initiative for the UK Government, and written for various Tier-1
-            and trade media outlets including <em>The Wall Street Journal</em>, Reuters, TheStreet.com, and <em>S&amp;P
-              Global</em>. She majored in Economics with Distinction, and earned postgraduate degrees in media research
-            and business journalism from the London School of Economics and Columbia University, where she was a James
-            W. Robins Reporting Fellow.</p>
-          <p class="pt-4 font-body-md text-body-md text-on-surface">If you'd like to work with us, contact us at <a
-              href="mailto:comms@lanecraftlab.com"
-              class="text-secondary underline hover:text-primary transition-colors">comms@lanecraftlab.com</a></p>
-        </div>
-        <!-- Portrait (right on desktop) -->
-        <div class="w-full md:w-2/5 flex-shrink-0">
-          <img alt="Portrait of Nish Amarnath" src="nishamarnath.png"
-            class="w-full max-w-sm md:max-w-full object-cover object-top rounded-sm shadow-md"
-            style="max-height:480px;" />
-          <div class="mt-4">
-            <p class="font-headline-lg text-headline-lg text-primary">Nish Amarnath</p>
-            <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mt-1">Founder &amp; Managing
-              Partner</p>
-          </div>
         </div>
       </div>
     </div>
@@ -788,15 +846,15 @@
       <h2 class="font-headline-xl text-headline-xl text-primary mb-10 uppercase"
         style="font-family:Georgia,serif; letter-spacing:0.04em;">Featured Engagements</h2>
       <div class="grid grid-cols-3 gap-6 md:gap-10 items-center">
-        <div class="flex items-center justify-center bg-white border border-outline-variant/30 p-6"
+        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6"
           style="min-height:140px;">
           <img src="PG.png" alt="Performance Golf" style="max-height:80px; max-width:100%; object-fit:contain;" />
         </div>
-        <div class="flex items-center justify-center bg-white border border-outline-variant/30 p-6"
+        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6"
           style="min-height:140px;">
           <img src="AuntFlow.webp" alt="Aunt Flow" style="max-height:110px; max-width:100%; object-fit:contain;" />
         </div>
-        <div class="flex items-center justify-center bg-white border border-outline-variant/30 p-6"
+        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6"
           style="min-height:140px;">
           <img src="LeeStrasbergInstitute.webp" alt="Lee Strasberg Theatre &amp; Film Institute"
             style="max-height:90px; max-width:100%; object-fit:contain;" />
@@ -891,6 +949,25 @@
               <li><strong>·</strong> Media briefings + advisory on founder visibility and storytelling opportunities.
               </li>
             </ul>
+            <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mt-6 mb-4">Featured Videos</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl">
+              <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:4px;">
+                <iframe src="https://www.youtube.com/embed/1zTLn4pfSuo?start=359"
+                  style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                  title="Performance Golf — Featured Video 1"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+              <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:4px;">
+                <iframe src="https://www.youtube.com/embed/8tq6hAM_2sE?start=2"
+                  style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                  title="Performance Golf — Featured Video 2"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -917,6 +994,17 @@
               building and venue operators, procurement partners, and distributors, while positioning Aunt Flow within
               the broader operational, cultural, and equity conversations driving period-care access toward the same
               institutional standard as other restroom essentials.</p>
+            <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mt-6 mb-4">Featured Video</p>
+            <div style="max-width:680px;">
+              <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:4px;">
+                <iframe src="https://www.youtube.com/embed/QIdAFc0GxeY"
+                  style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                  title="Aunt Flow — Featured Video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
           </div>
         </div>
 
