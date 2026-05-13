@@ -401,6 +401,32 @@
       opacity: 1;
       transform: translateY(0) scale(1);
     }
+
+    /* ── Accordion row hover ── */
+    .accordion-item button {
+      transition: background-color 0.2s ease;
+    }
+    .accordion-item button:hover {
+      background-color: rgba(0, 0, 0, 0.025);
+    }
+    .accordion-item button span:first-child {
+      display: inline-block;
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .accordion-item button:hover span:first-child {
+      transform: scale(1.04) translateX(6px);
+    }
+
+    /* ── General scroll-reveal (fade-up) ── */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .scroll-reveal.in-view {
+      opacity: 1;
+      transform: none;
+    }
   </style>
 </head>
 
@@ -460,7 +486,7 @@
     <!-- About Us text -->
     <div
       class="py-section-gap px-gutter md:px-margin-page md:grid md:grid-cols-12 md:gap-gutter md:items-center max-w-screen-2xl mx-auto">
-      <div class="md:col-span-8 col-start-1">
+      <div class="md:col-span-8 col-start-1 scroll-reveal">
         <span class="font-label-sm text-label-sm uppercase text-outline tracking-widest mb-4 block">About Us</span>
         <p class="text-on-surface max-w-2xl text-pretty leading-relaxed" style="font-size:22px; line-height:1.75;">Lanecraft Lab
           is a strategic advisory and communications firm that helps senior professionals and organizations boost their
@@ -490,10 +516,10 @@
     <!-- The Mission -->
     <div
       class="py-section-gap px-gutter md:px-margin-page md:grid md:grid-cols-12 md:gap-gutter border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
-      <div class="md:col-span-4 col-start-1 mb-8 md:mb-0">
+      <div class="md:col-span-4 col-start-1 mb-8 md:mb-0 scroll-reveal">
         <h2 class="font-headline-lg text-headline-lg text-primary sticky top-32">The Mission</h2>
       </div>
-      <div class="md:col-span-8">
+      <div class="md:col-span-8 scroll-reveal" data-delay="120">
         <p class="font-body-lg text-body-lg text-on-surface leading-loose mb-10">Lanecraft Lab helps B2B and B2C brands
           scale by placing their ideas, expertise, and innovations in front of target stakeholder groups that can drive
           top-lines and generate repeat business for our clients. We specialize in earned media visibility across
@@ -523,10 +549,10 @@
     <!-- Featured Press -->
     <div
       class="py-section-gap px-gutter md:px-margin-page md:grid md:grid-cols-12 md:gap-gutter border-t border-outline-variant/30 bg-surface-container-low">
-      <div class="md:col-span-4 col-start-1 mb-8 md:mb-0 max-w-screen-2xl mx-auto">
+      <div class="md:col-span-4 col-start-1 mb-8 md:mb-0 max-w-screen-2xl mx-auto scroll-reveal">
         <h2 class="font-headline-lg text-headline-lg text-primary">Featured Press</h2>
       </div>
-      <div class="md:col-span-8 max-w-screen-2xl mx-auto">
+      <div class="md:col-span-8 max-w-screen-2xl mx-auto scroll-reveal" data-delay="120">
         <a href="https://www.foundedbywomen.org/women-who-lead/from-wall-street-journal-to-strategic-advisor-how-nish-amarnath-built-lanecraft-lab-on-the-power-of-story-architecture/"
           target="_blank" rel="noopener noreferrer"
           class="font-body-lg text-body-lg font-medium hover:underline transition-colors" style="color:#1a56db;">
@@ -540,10 +566,10 @@
 
     <!-- Our Leadership -->
     <div class="py-section-gap px-gutter md:px-margin-page border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
-      <h2 class="font-headline-lg text-headline-lg text-primary mb-10">Our Leadership</h2>
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-10 scroll-reveal">Our Leadership</h2>
       <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-start">
         <!-- Text block (left on desktop) -->
-        <div class="w-full md:w-3/5 space-y-4 font-body-md text-body-md text-on-surface-variant">
+        <div class="w-full md:w-3/5 space-y-4 font-body-md text-body-md text-on-surface-variant scroll-reveal" data-delay="100">
           <p>Nish Amarnath is the founder of Lanecraft Lab, a strategic advisory and communications firm helping
             organizations and senior professionals clarify their narratives, strengthen stakeholder relationships, and
             drive visibility across media, capital markets, and institutional channels. She brings to this work over a
@@ -558,7 +584,7 @@
               class="text-secondary underline hover:text-primary transition-colors">comms@lanecraftlab.com</a></p>
         </div>
         <!-- Portrait (right on desktop) -->
-        <div class="w-full md:w-2/5 flex-shrink-0">
+        <div class="w-full md:w-2/5 flex-shrink-0 scroll-reveal" data-delay="220">
           <img alt="Portrait of Nish Amarnath" src="nishamarnath.png"
             class="w-full max-w-sm md:max-w-full object-cover object-top rounded-sm shadow-md"
             style="max-height:480px;" />
@@ -573,8 +599,8 @@
 
     <!-- Advisory Committee -->
     <div class="py-section-gap px-gutter md:px-margin-page border-t border-outline-variant/30 max-w-screen-2xl mx-auto">
-      <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Advisory Committee</h2>
-      <p class="font-body-md text-body-md text-on-surface-variant mb-2 max-w-3xl">Lanecraft Lab is building a circle of
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-4 scroll-reveal">Advisory Committee</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-2 max-w-3xl scroll-reveal" data-delay="100">Lanecraft Lab is building a circle of
         advisors whose experience spans public diplomacy, international development, capital markets, energy, AI,
         healthcare, financial services, and organizational transformation. Our advisory members offer insight,
         perspective, and strategic foresight as we scale our work at the intersection of narrative intelligence, capital
@@ -582,7 +608,7 @@
       <p class="font-label-sm text-label-sm text-on-surface uppercase tracking-widest mb-8 mt-6">Current members
         include:</p>
       <div class="space-y-8">
-        <div class="border-t border-outline-variant/50 pt-6">
+        <div class="border-t border-outline-variant/50 pt-6 scroll-reveal" data-delay="0">
           <p class="font-headline-lg text-headline-lg text-primary mb-1">Jonathan Ward</p>
           <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-3" style="font-size:13px;">International Affairs &amp;
             Trade Advisor · Chair, Wisconsin World Affairs Council</p>
@@ -592,7 +618,7 @@
             in Saudi Arabia, Papua New Guinea, Iraq, Pakistan, India, Brazil, and Washington, D.C., working across
             market access, investment attraction, supply chains, and government relations.</p>
         </div>
-        <div class="border-t border-outline-variant/50 pt-6">
+        <div class="border-t border-outline-variant/50 pt-6 scroll-reveal" data-delay="130">
           <p class="font-headline-lg text-headline-lg text-primary mb-1">David Trask</p>
           <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-3" style="font-size:13px;">National Director, ARC
             Facilities · Host, Facility Voices Podcast</p>
@@ -603,7 +629,7 @@
             operations with leadership priorities is invaluable for our work at the intersection of strategy, systems,
             and stakeholder outcomes.</p>
         </div>
-        <div class="border-t border-outline-variant/50 pt-6">
+        <div class="border-t border-outline-variant/50 pt-6 scroll-reveal" data-delay="260">
           <p class="font-headline-lg text-headline-lg text-primary mb-1">Dr. Jason Baker</p>
           <p class="font-label-sm text-label-sm text-outline uppercase tracking-widest mb-3" style="font-size:13px;">Assistant Professor of
             Medicine &amp; Attending Endocrinologist · Cornell Medical College, New York</p>
@@ -622,7 +648,7 @@
     </div>
 
     <div
-      class="py-section-gap px-gutter md:px-margin-page flex flex-col items-center justify-center text-center bg-primary-container border-t border-outline-variant/30">
+      class="py-section-gap px-gutter md:px-margin-page flex flex-col items-center justify-center text-center bg-primary-container border-t border-outline-variant/30 scroll-reveal">
       <h2 class="font-headline-xl text-headline-xl mb-6 text-on-primary">Initiate Dialogue</h2>
       <p class="font-body-lg text-body-lg mb-10 max-w-xl text-on-primary/80">Engage Lanecraft Lab to architect your
         organization's strategic narrative and drive measurable outcomes.</p>
@@ -640,13 +666,13 @@
   <section id="services" class="max-w-screen-2xl mx-auto px-gutter md:px-margin-page py-section-gap">
 
     <!-- Intro text -->
-    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mb-16 leading-relaxed">We shape the stories
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mb-16 leading-relaxed scroll-reveal">We shape the stories
       that influence decisions. We help leaders and organizations communicate strategy and value to stakeholders beyond
       the media, from boards, investors, and lenders to customers, distributors, and regulators.</p>
 
     <!-- WHAT WE OFFER accordion -->
     <div class="mb-16">
-      <h2 class="font-headline-xl text-headline-xl text-primary mb-8 uppercase"
+      <h2 class="font-headline-xl text-headline-xl text-primary mb-8 uppercase scroll-reveal"
         style="font-family:Georgia,serif; letter-spacing:0.04em;">What We Offer</h2>
       <div class="border-t border-outline-variant/60">
 
@@ -761,7 +787,7 @@
 
     <!-- WHAT CLIENTS ARE SAYING -->
     <div class="mb-16">
-      <h2 class="font-headline-xl text-headline-xl text-primary mb-10 uppercase"
+      <h2 class="font-headline-xl text-headline-xl text-primary mb-10 uppercase scroll-reveal"
         style="font-family:Georgia,serif; letter-spacing:0.04em;">What Clients Are Saying</h2>
       <div class="space-y-10">
 
@@ -846,7 +872,7 @@
   <section id="clients" class="max-w-screen-2xl mx-auto px-gutter md:px-margin-page py-section-gap">
 
     <!-- Intro paragraph -->
-    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mb-16 leading-relaxed">Lanecraft Lab operates
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mb-16 leading-relaxed scroll-reveal">Lanecraft Lab operates
       at the intersection of strategy, systems, and communications, supporting professionals, brands, and mission-driven
       organizations as they navigate milestones and inflection points. Our work spans strategic positioning, executive
       advisory, leadership development, and regulatory insight in sectors shaped by shifting geopolitical, compliance,
@@ -855,19 +881,19 @@
 
     <!-- FEATURED ENGAGEMENTS -->
     <div class="mb-16">
-      <h2 class="font-headline-xl text-headline-xl text-primary mb-10 uppercase"
+      <h2 class="font-headline-xl text-headline-xl text-primary mb-10 uppercase scroll-reveal"
         style="font-family:Georgia,serif; letter-spacing:0.04em;">Featured Engagements</h2>
       <div class="grid grid-cols-3 gap-6 md:gap-10 items-center">
-        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6"
-          style="min-height:140px;">
+        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6 scroll-reveal"
+          style="min-height:140px;" data-delay="0">
           <img src="PG.png" alt="Performance Golf" style="max-height:80px; max-width:100%; object-fit:contain;" />
         </div>
-        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6"
-          style="min-height:140px;">
+        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6 scroll-reveal"
+          style="min-height:140px;" data-delay="120">
           <img src="AuntFlow.webp" alt="Aunt Flow" style="max-height:110px; max-width:100%; object-fit:contain;" />
         </div>
-        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6"
-          style="min-height:140px;">
+        <div class="client-card flex items-center justify-center bg-white border border-outline-variant/30 p-6 scroll-reveal"
+          style="min-height:140px;" data-delay="240">
           <img src="LeeStrasbergInstitute.webp" alt="Lee Strasberg Theatre &amp; Film Institute"
             style="max-height:90px; max-width:100%; object-fit:contain;" />
         </div>
@@ -876,7 +902,7 @@
 
     <!-- ALL CLIENTS accordion -->
     <div>
-      <h2 class="font-headline-xl text-headline-xl text-primary mb-8 uppercase"
+      <h2 class="font-headline-xl text-headline-xl text-primary mb-8 uppercase scroll-reveal"
         style="font-family:Georgia,serif; letter-spacing:0.04em;">All Clients</h2>
       <div class="border-t border-outline-variant/60">
 
@@ -1243,11 +1269,15 @@
         });
       })();
 
-    // Testimonial scroll-in animation
+    // Always scroll to top on page load/reload
+    if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+    window.addEventListener('load', function () { window.scrollTo(0, 0); });
+
+    // Unified scroll-reveal animation (testimonials + general sections)
     (function () {
-      var cards = document.querySelectorAll('.testimonial-card');
+      var els = document.querySelectorAll('.testimonial-card, .scroll-reveal');
       if (!('IntersectionObserver' in window)) {
-        cards.forEach(function (c) { c.classList.add('in-view'); });
+        els.forEach(function (el) { el.classList.add('in-view'); });
         return;
       }
       var obs = new IntersectionObserver(function (entries) {
@@ -1259,11 +1289,8 @@
             obs.unobserve(el);
           }
         });
-      }, { threshold: 0.12 });
-      cards.forEach(function (c, i) {
-        c.dataset.delay = i * 100;
-        obs.observe(c);
-      });
+      }, { threshold: 0.10 });
+      els.forEach(function (el) { obs.observe(el); });
     })();
 
     // Accordion toggle for services section
