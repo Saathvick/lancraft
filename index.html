@@ -321,6 +321,18 @@
         padding: 40px 20px;
       }
 
+      /* Disable all scroll animations on mobile — IntersectionObserver fires
+         inconsistently causing blank text. Show everything immediately. */
+      .scroll-reveal,
+      .testimonial-card,
+      .testimonial-card.in-view,
+      .testimonial-card.t-active {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+      }
+
       /* header and footer keep their own px-8 padding on mobile */
 
       /* 3-col hero: collapse side strips on mobile */
@@ -423,7 +435,6 @@
     /* ── Contact button hover ── */
     header a.contact-btn {
       transition: background-color 0.2s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-      display: inline-block;
     }
     header a.contact-btn:hover {
       transform: scale(1.06);
