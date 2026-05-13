@@ -321,16 +321,22 @@
         padding: 40px 20px;
       }
 
-      /* Disable all scroll animations on mobile — IntersectionObserver fires
-         inconsistently causing blank text. Show everything immediately. */
+      /* Subtle fade-in only on mobile — no translate/scale/delay */
       .scroll-reveal,
-      .testimonial-card,
-      .testimonial-card.in-view,
-      .testimonial-card.t-active {
+      .testimonial-card {
+        opacity: 0;
+        transform: none !important;
+        transition: opacity 0.25s ease !important;
+        animation: none !important;
+      }
+      .scroll-reveal.in-view,
+      .testimonial-card.in-view {
         opacity: 1 !important;
         transform: none !important;
-        transition: none !important;
-        animation: none !important;
+      }
+      .testimonial-card.t-active {
+        transform: none !important;
+        opacity: 1 !important;
       }
 
       /* header and footer keep their own px-8 padding on mobile */
@@ -340,15 +346,49 @@
         grid-template-columns: 70px 1fr 70px !important;
       }
 
-      /* Media logos: keep them from overflowing */
-      .flex.flex-wrap.items-center.gap-8 img {
-        height: 28px;
-        max-width: 120px;
+      /* Press logos: 2-column grid — wider cells fit WSJ properly */
+      .press-logos-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 16px;
+        align-items: center;
+        justify-items: center;
       }
+      .press-logos-grid img {
+        height: auto !important;
+        max-height: 38px !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+      }
+      /* WSJ is very wide — limit height so it renders proportionally */
+      .press-logos-grid img:first-child {
+        max-height: 22px !important;
+      }
+      .press-logos-grid .logo-full-row {
+        grid-column: 1 / -1;
+        max-height: 30px !important;
+      }
+
+      /* Reduce body font sizes on mobile — 21px is too large */
+      .text-body-md { font-size: 17px !important; line-height: 1.6 !important; }
+      .text-body-lg { font-size: 17px !important; line-height: 1.65 !important; }
+      p[style*="font-size:22px"] { font-size: 17px !important; line-height: 1.65 !important; }
 
       /* Ken Burns hero: cap height on mobile */
       .hero-kenburns {
         max-height: 280px;
+      }
+
+      /* Hero overlay text: centered, one line on mobile */
+      .hero-kenburns-wrapper .absolute {
+        justify-content: center;
+        padding-bottom: 14px;
+      }
+      .hero-kenburns-wrapper .absolute p {
+        text-align: center;
+        letter-spacing: 0.04em;
+        font-size: 9px !important;
+        width: 100%;
       }
 
       /* Featured Engagements: stack logos on mobile */
@@ -399,8 +439,8 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .client-card:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      transform: scale(1.05) !important;
+      transition: transform 0.3s ease !important;
     }
 
     /* ── Testimonial scroll-in animation ── */
@@ -574,7 +614,7 @@
           top-lines and generate repeat business for our clients. We specialize in earned media visibility across
           Tier-1, trade, and specialist outlets. Media outlets where our clients have been featured include:</p>
         <!-- Media outlet logos -->
-        <div class="flex flex-wrap items-center gap-8 md:gap-12 mt-2">
+        <div class="press-logos-grid flex flex-wrap items-center gap-8 md:gap-12 mt-2">
           <img src="WSJ+logo.webp" alt="The Wall Street Journal" class="press-logo"
             style="height:30px; object-fit:contain;" />
           <img src="TheStreet+logo.webp" alt="The Street" class="press-logo"
@@ -587,7 +627,7 @@
             style="height:34px; object-fit:contain;" />
           <img src="morning-brew-logo.svg" alt="Morning Brew" class="press-logo"
             style="height:44px; object-fit:contain;" />
-          <img src="bw-main-logo.webp" alt="BW BusinessWorld" class="press-logo"
+          <img src="bw-main-logo.webp" alt="BW BusinessWorld" class="press-logo logo-full-row"
             style="height:34px; object-fit:contain;" />
         </div>
       </div>
