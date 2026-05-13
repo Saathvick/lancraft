@@ -402,6 +402,33 @@
       transform: translateY(0) scale(1);
     }
 
+    /* ── Testimonial spotlight: zooms up when centred in viewport ── */
+    .testimonial-card.in-view {
+      transition: opacity 0.7s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .testimonial-card.t-active {
+      transform: scale(1.04) !important;
+      opacity: 1 !important;
+    }
+
+    /* ── Nav link hover ── */
+    header nav a {
+      transition: color 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+      display: inline-block;
+    }
+    header nav a:hover {
+      transform: scale(1.1);
+    }
+
+    /* ── Contact button hover ── */
+    header a.contact-btn {
+      transition: background-color 0.2s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+      display: inline-block;
+    }
+    header a.contact-btn:hover {
+      transform: scale(1.06);
+    }
+
     /* ── Accordion row hover ── */
     .accordion-item button {
       transition: background-color 0.2s ease;
@@ -415,6 +442,17 @@
     }
     .accordion-item button:hover span:first-child {
       transform: scale(1.04) translateX(6px);
+    }
+
+    /* ── Consult button one-time pulse ── */
+    @keyframes pulse-once {
+      0%   { transform: scale(1); }
+      35%  { transform: scale(1.03); }
+      65%  { transform: scale(1.015); }
+      100% { transform: scale(1); }
+    }
+    .consult-btn-pulse {
+      animation: pulse-once 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     /* ── General scroll-reveal (fade-up) ── */
@@ -450,7 +488,7 @@
             class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#0A192F] dark:hover:text-white transition-colors duration-300">Clients</a>
         </nav>
         <a href="#contact-form"
-          class="bg-[#0A192F] text-white px-6 py-2 uppercase font-label-sm tracking-widest text-label-sm hover:bg-opacity-90 transition-opacity hidden md:block">
+          class="contact-btn bg-[#0A192F] text-white px-6 py-2 uppercase font-label-sm tracking-widest text-label-sm hover:bg-opacity-90 hidden md:block">
           Contact
         </a>
         <button id="hamburger-btn" class="md:hidden text-on-surface flex items-center justify-center w-10 h-10"
@@ -527,17 +565,17 @@
         <!-- Media outlet logos -->
         <div class="flex flex-wrap items-center gap-8 md:gap-12 mt-2">
           <img src="WSJ+logo.webp" alt="The Wall Street Journal" class="press-logo"
-            style="height:22px; object-fit:contain;" />
+            style="height:30px; object-fit:contain;" />
           <img src="TheStreet+logo.webp" alt="The Street" class="press-logo"
-            style="height:36px; object-fit:contain;" />
+            style="height:42px; object-fit:contain;" />
           <img src="CNBC+logo.webp" alt="CNBC" class="press-logo"
-            style="height:36px; object-fit:contain;" />
+            style="height:50px; object-fit:contain;" />
           <img src="Golf+Digest.webp" alt="Golf Digest" class="press-logo"
             style="height:48px; object-fit:contain;" />
           <img src="Forbes_logo.svg" alt="Forbes" class="press-logo"
             style="height:34px; object-fit:contain;" />
           <img src="morning-brew-logo.svg" alt="Morning Brew" class="press-logo"
-            style="height:36px; object-fit:contain;" />
+            style="height:44px; object-fit:contain;" />
           <img src="bw-main-logo.webp" alt="BW BusinessWorld" class="press-logo"
             style="height:34px; object-fit:contain;" />
         </div>
@@ -1271,7 +1309,6 @@
 
     // Always scroll to top on page load/reload
     if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
-    window.addEventListener('load', function () { window.scrollTo(0, 0); });
 
     // Unified scroll-reveal animation (testimonials + general sections)
     (function () {
@@ -1291,6 +1328,39 @@
         });
       }, { threshold: 0.10 });
       els.forEach(function (el) { obs.observe(el); });
+    })();
+
+    // Consult button — one-time pulse when it first enters view
+    (function () {
+      var btn = document.querySelector('.consult-btn');
+      if (!btn || !('IntersectionObserver' in window)) return;
+      var obs = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          btn.classList.add('consult-btn-pulse');
+          obs.unobserve(btn);
+        }
+      }, { threshold: 0.6 });
+      obs.observe(btn);
+    })();
+
+    // Testimonial spotlight — only the card closest to viewport centre gets t-active
+    (function () {
+      var cards = Array.from(document.querySelectorAll('.testimonial-card'));
+      if (!cards.length) return;
+      function update() {
+        var mid = window.innerHeight / 2;
+        var closest = null, minDist = Infinity;
+        cards.forEach(function (c) {
+          if (!c.classList.contains('in-view')) return;
+          var r = c.getBoundingClientRect();
+          var dist = Math.abs((r.top + r.height / 2) - mid);
+          if (dist < minDist) { minDist = dist; closest = c; }
+        });
+        cards.forEach(function (c) { c.classList.toggle('t-active', c === closest); });
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      setTimeout(update, 800);
     })();
 
     // Accordion toggle for services section
