@@ -85,10 +85,10 @@
             "headline-lg": ["Newsreader"]
           },
           fontSize: {
-            "body-lg": ["20px", { "lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400" }],
+            "body-lg": ["22px", { "lineHeight": "1.75", "letterSpacing": "0", "fontWeight": "400" }],
             "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
             "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-            "body-md": ["19px", { "lineHeight": "1.65", "letterSpacing": "0", "fontWeight": "400" }],
+            "body-md": ["21px", { "lineHeight": "1.7", "letterSpacing": "0", "fontWeight": "400" }],
             "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500" }]
           }
         }
@@ -390,6 +390,17 @@
       transform: translateY(-4px) scale(1.02);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
+
+    /* ── Testimonial scroll-in animation ── */
+    .testimonial-card {
+      opacity: 0;
+      transform: translateY(36px) scale(0.97);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .testimonial-card.in-view {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   </style>
 </head>
 
@@ -451,7 +462,7 @@
       class="py-section-gap px-gutter md:px-margin-page md:grid md:grid-cols-12 md:gap-gutter md:items-center max-w-screen-2xl mx-auto">
       <div class="md:col-span-8 col-start-1">
         <span class="font-label-sm text-label-sm uppercase text-outline tracking-widest mb-4 block">About Us</span>
-        <p class="text-on-surface max-w-2xl text-pretty leading-relaxed" style="font-size:20px; line-height:1.7;">Lanecraft Lab
+        <p class="text-on-surface max-w-2xl text-pretty leading-relaxed" style="font-size:22px; line-height:1.75;">Lanecraft Lab
           is a strategic advisory and communications firm that helps senior professionals and organizations boost their
           visibility, share their voice across multiple platforms, and reposition their narratives for customers,
           distributors, boards and investors. We operate at the intersection of strategy, systems, and storytelling. We
@@ -644,7 +655,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left group"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Corporate Governance</span>
+              style="font-size:16px; letter-spacing:0.08em;">Corporate Governance</span>
             <span class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none">+</span>
           </button>
           <div class="accordion-body hidden pb-6">
@@ -660,7 +671,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left group"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Stakeholder Engagement and Positioning</span>
+              style="font-size:16px; letter-spacing:0.08em;">Stakeholder Engagement and Positioning</span>
             <span class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none">+</span>
           </button>
           <div class="accordion-body hidden pb-6">
@@ -677,7 +688,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left group"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Media and Public Voice Strategy</span>
+              style="font-size:16px; letter-spacing:0.08em;">Media and Public Voice Strategy</span>
             <span class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none">+</span>
           </button>
           <div class="accordion-body hidden pb-6">
@@ -701,7 +712,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left group"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Sustainability and Energy Efficiency</span>
+              style="font-size:16px; letter-spacing:0.08em;">Sustainability and Energy Efficiency</span>
             <span class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none">+</span>
           </button>
           <div class="accordion-body hidden pb-6">
@@ -725,7 +736,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left group"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">1:1 Strategy Consults</span>
+              style="font-size:16px; letter-spacing:0.08em;">1:1 Strategy Consults</span>
             <span class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none">+</span>
           </button>
           <div class="accordion-body hidden pb-6">
@@ -754,7 +765,7 @@
         style="font-family:Georgia,serif; letter-spacing:0.04em;">What Clients Are Saying</h2>
       <div class="space-y-10">
 
-        <div class="border-t border-outline-variant/40 pt-8">
+        <div class="testimonial-card border-t border-outline-variant/40 pt-8">
           <p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed max-w-3xl">"My experience
             with Nish was delightful, in every sense of the word. She not only asked the right questions to help me get
             more clarity on my goals, but validated my approach and suggested actionable items to develop my personal
@@ -764,14 +775,14 @@
             reporter at EQDerivatives. Aug. 2, 2025</p>
         </div>
 
-        <div class="border-t border-outline-variant/40 pt-8">
+        <div class="testimonial-card border-t border-outline-variant/40 pt-8">
           <p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed max-w-3xl">"I thoroughly
             enjoyed dealing with a true professional both knowledgeable and caring. I would highly recommend Nish."</p>
           <p class="font-label-sm text-label-sm text-on-surface mt-4 uppercase tracking-widest">— Kevin J. Burke, NYPD
             lieutenant (Ret.). July 8, 2025</p>
         </div>
 
-        <div class="border-t border-outline-variant/40 pt-8">
+        <div class="testimonial-card border-t border-outline-variant/40 pt-8">
           <p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed max-w-3xl">"I am immensely
             grateful for Nish's time and effort she put into collaborating with me on my project. Her words are
             beautifully honest, insightful and catered to the audience I wanted. If given the opportunity, I would
@@ -780,7 +791,7 @@
             playwright, producer and actor. June 16, 2025</p>
         </div>
 
-        <div class="border-t border-outline-variant/40 pt-8">
+        <div class="testimonial-card border-t border-outline-variant/40 pt-8">
           <p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed max-w-3xl">"I worked with
             Nish to upgrade my resumé to make me more marketable. She really helped me take the content and layout to
             the next level. 10/10 would recommend!"</p>
@@ -788,7 +799,7 @@
             Oct. 17, 2025</p>
         </div>
 
-        <div class="border-t border-outline-variant/40 pt-8">
+        <div class="testimonial-card border-t border-outline-variant/40 pt-8">
           <p class="font-body-lg text-body-lg text-on-surface-variant italic leading-relaxed max-w-3xl">"Nish came
             prepared to our career coaching conversation. She asked great questions and had concrete feedback on how I
             could grow."</p>
@@ -874,7 +885,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">A.R.T / New York Theatres (Lee Strasberg
+              style="font-size:16px; letter-spacing:0.08em;">A.R.T / New York Theatres (Lee Strasberg
               Institute-Affiliated Production)</span>
             <span
               class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none flex-shrink-0 ml-4">+</span>
@@ -927,7 +938,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Performance Golf</span>
+              style="font-size:16px; letter-spacing:0.08em;">Performance Golf</span>
             <span
               class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none flex-shrink-0 ml-4">+</span>
           </button>
@@ -977,7 +988,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Aunt Flow</span>
+              style="font-size:16px; letter-spacing:0.08em;">Aunt Flow</span>
             <span
               class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none flex-shrink-0 ml-4">+</span>
           </button>
@@ -1014,7 +1025,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">An Energy Infrastructure Leader (Confidential)</span>
+              style="font-size:16px; letter-spacing:0.08em;">An Energy Infrastructure Leader (Confidential)</span>
             <span
               class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none flex-shrink-0 ml-4">+</span>
           </button>
@@ -1058,7 +1069,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Narrative Repositioning + Sectoral Re-Entry</span>
+              style="font-size:16px; letter-spacing:0.08em;">Narrative Repositioning + Sectoral Re-Entry</span>
             <span
               class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none flex-shrink-0 ml-4">+</span>
           </button>
@@ -1087,7 +1098,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Digital Asset Deployment and Content Platform
+              style="font-size:16px; letter-spacing:0.08em;">Digital Asset Deployment and Content Platform
               Optimization</span>
             <span
               class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none flex-shrink-0 ml-4">+</span>
@@ -1118,7 +1129,7 @@
           <button onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-5 text-left"
             aria-expanded="false">
             <span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface font-bold"
-              style="font-size:13px; letter-spacing:0.12em;">Strategic Positioning for a Venture Launch</span>
+              style="font-size:16px; letter-spacing:0.08em;">Strategic Positioning for a Venture Launch</span>
             <span
               class="accordion-icon text-on-surface-variant text-2xl font-light leading-none select-none flex-shrink-0 ml-4">+</span>
           </button>
@@ -1231,6 +1242,29 @@
           }
         });
       })();
+
+    // Testimonial scroll-in animation
+    (function () {
+      var cards = document.querySelectorAll('.testimonial-card');
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(function (c) { c.classList.add('in-view'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var el = entry.target;
+            var delay = parseInt(el.dataset.delay) || 0;
+            setTimeout(function () { el.classList.add('in-view'); }, delay);
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.12 });
+      cards.forEach(function (c, i) {
+        c.dataset.delay = i * 100;
+        obs.observe(c);
+      });
+    })();
 
     // Accordion toggle for services section
     function toggleAccordion(btn) {
